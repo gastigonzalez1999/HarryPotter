@@ -7,7 +7,9 @@ const cors = require('cors');
 const compression = require('compression');
 const dotenv = require('dotenv');
 dotenv.config();
-const houses = require("./routes/houses");
+const { dbConnection } = require('./database/config');
+const houses = require('./routes/houses');
+dbConnection();
 
 
 var app = express();
